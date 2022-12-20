@@ -63,7 +63,7 @@ public class AnnotationAwareAspectJAutoProxyCreator extends AspectJAwareAdvisorA
 	 * Set a list of regex patterns, matching eligible @AspectJ bean names.
 	 * <p>Default is to consider all @AspectJ beans as eligible.
 	 */
-	public void setIncludePatterns(List<String> patterns) {
+	public void setIncludePatterns( List<String> patterns) {
 		this.includePatterns = new ArrayList<>(patterns.size());
 		for (String patternText : patterns) {
 			this.includePatterns.add(Pattern.compile(patternText));

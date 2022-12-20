@@ -1,7 +1,8 @@
 package com.zhyf;
 
-import org.springframework.context.ApplicationContext;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 /**
  * Copyright (c) 2022. All Rights Reserved
@@ -12,8 +13,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-test.xml");
-		Student student = (Student) context.getBean("student");
+		ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring-test.xml");
+		Object student = classPathXmlApplicationContext.getBean("student");
 		System.out.println(student);
 	}
 }
