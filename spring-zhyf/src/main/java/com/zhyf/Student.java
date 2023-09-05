@@ -12,6 +12,16 @@ import org.springframework.ui.context.ThemeSource;
 public class Student {
 
 	private int age;
+	private String name;
+	private Dog dog;
+
+	public Dog getDog() {
+		return dog;
+	}
+
+	public void setDog(Dog dog) {
+		this.dog = dog;
+	}
 
 	public int getAge() {
 		return age;
@@ -21,15 +31,20 @@ public class Student {
 		this.age = age;
 	}
 
-	private String name;
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Student{" +
+				"age=" + age +
+				", dog=" + dog +
+				", name='" + name + '\'' +
+				'}';
+	}
 }

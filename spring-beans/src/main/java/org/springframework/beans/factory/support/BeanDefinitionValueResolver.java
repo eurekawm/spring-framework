@@ -110,6 +110,7 @@ class BeanDefinitionValueResolver {
 		// to another bean to be resolved.
 		if (value instanceof RuntimeBeanReference) {
 			RuntimeBeanReference ref = (RuntimeBeanReference) value;
+			// RuntimeBeanReference这个类型是自定义类型 需要从beanFactory里面去获取 然后返回 所以又要触发创建bean的一系列操作
 			return resolveReference(argName, ref);
 		}
 		else if (value instanceof RuntimeBeanNameReference) {
@@ -327,6 +328,7 @@ class BeanDefinitionValueResolver {
 				}
 				else {
 					resolvedName = String.valueOf(doEvaluate(ref.getBeanName()));
+					// 从工厂里面获取需要的对象
 					bean = this.beanFactory.getBean(resolvedName);
 				}
 				this.beanFactory.registerDependentBean(resolvedName, this.beanName);
